@@ -6,7 +6,7 @@ PouchDB.plugin(require('pouchdb-authentication'));
 var user = {
 
   name: 'java-jonas',
-  password: 'cc62946264928'
+  password: 'xxxxxxxxx'
 };
 var pouchOpts = {
   skipSetup: true
