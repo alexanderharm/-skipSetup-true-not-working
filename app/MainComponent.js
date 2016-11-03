@@ -9,19 +9,12 @@ var user = {
   password: 'xxxxxxxxx'
 };
 var pouchOpts = {
-  skipSetup: true
-};
-var ajaxOpts = {
-  ajax: {
-    headers: {
-      Authorization: 'Basic ' + window.btoa(user.name + ':' + user.password)
-    }
-  }
+  skip_setup: true
 };
 
-var db = new PouchDB('https://java-jonas.cloudant.com/phones/', pouchOpts)
+var db = new PouchDB('https://java-jonas.cloudant.com/phones', pouchOpts)
 
-db.login(user.name, user.password, ajaxOpts).then(function() {
+db.login(user.name, user.password).then(function() {
   return db.allDocs();
 }).then(function(docs) {
   console.log(docs);
